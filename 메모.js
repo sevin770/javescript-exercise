@@ -158,8 +158,29 @@ var output = []; 빈 배열 만들기
 output.push(1); 배열에 넣고 싶은 목록을 push()에 넣는다
 
 
+
 while loops 반복문
 
 while(someting is true) {
     //do someting
 }
+
+for loops
+
+for(i=0; i<2; i++)
+
+i=0 - 시작점
+i<2 - 끝점
+i++  변경사항
+
+while로 표현하면 다음과 같다.
+var i=0
+while(i<2) {
+   console.log(i)
+   i++;
+}
+
+while 과 for의 차이
+
+while : 조건식이 false가 될때 까지 무한 실행 내가 구하고자 하는 값의 조건이 무엇인지 정확히 모를 경우, 유동적인 경우
+for : 조건식으로 true,false를 판단, 구하고자 하는 값의 조건이 무엇인지 정확할 경우

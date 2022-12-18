@@ -137,3 +137,4 @@ function calculator(num1,num2,operator){
 debugger; calculator(3,4,multiply); // debugger; 하고 오른쪽에 화살표아래 누르면 뭐가 잘못됐는지 프로세스를 확인가능. 함수 고칠 때 콘솔에서 저렇게 하면 됨.
 
 //
+

@@ -184,3 +184,89 @@ while 과 for의 차이
 
 while : 조건식이 false가 될때 까지 무한 실행 내가 구하고자 하는 값의 조건이 무엇인지 정확히 모를 경우, 유동적인 경우
 for : 조건식으로 true,false를 판단, 구하고자 하는 값의 조건이 무엇인지 정확할 경우
+
+
+
+-생성자 함수
+
+속성에 대한 모든 입력을 설정한다.
+여러 명 만들려면?
+
+
+var bellboy1 = {
+   name : "timmy" ,
+   age : 19 ,
+   experience : true ,
+   languages : [ "French", "English"]
+}
+var bellboy2 = {
+   name : "jimmy" ,
+   age : 21 ,
+   experience : false ,
+   languages : [ "Korean", "English"]
+}
+...
+
+-생성자 함수: 첫글자도 대문자로 해야함. 위에꺼를 더 간단하게
+
+function BellBoy(name, age, experience, languages) {
+   this.name = name;
+   this.age = age;
+   this.experience = experience;
+   this.languages = languages;
+}
+
+var bellBoy = new BellBoy ("timmy", "19", "true", "[ "French", "English"]");
+var bellBoy = new BellBoy ("jimmy", "21", "true", "[ "Korean", "English"]");
+
+
+예시)
+function HouseKeeper (yearsOfExperience,name,cleaningReperitoire) {
+  this.yearsOfExperience = yearsOfExperience;
+  this.name = name;
+  this.cleaningReperitoire =cleaningReperitoire;
+}
+
+var houseKeeper1 = new HouseKeeper(9,"tom",["lobby","bedroom"]);
+var houseKeeper2 = new HouseKeeper(20,"jimmy",["lobby","bathroom"]);
+
+console.log(houseKeeper1.name); // tom이나옴
+console.log(houseKeeper2.name); // jimmy가나옴
+
+
+-swich case / 드럼키트 
+
+
+var buttonInnerHTML = this.innerHTML;
+
+        switch (buttonInnerHTML) {
+            case "w":
+                var tom1 = new Audio ("./sounds/tom-1.mp3");
+                tom1.play();
+                break;
+
+            default:
+                console.log(buttonInnerHTML);
+                break;
+        }
+
+
+function HouseKeeper (yearsOfExperience,name,cleaningReperitoire,clean) {
+  this.yearsOfExperience = yearsOfExperience;
+  this.name = name;
+  this.cleaningReperitoire = cleaningReperitoire;
+  this.clean = function(){
+   alert("May I take your suitcase");
+  }
+}
+
+var houseKeeper1 = new HouseKeeper(12,"james",["bedroom"]);
+houseKeeper1.clean();//하면 위에 실행됨.
+
+
+
+
+function sayHi(e){
+  console.log("hello" + e);
+}
+sayHi("tom"); // hello tom 출력

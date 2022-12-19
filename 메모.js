@@ -137,8 +137,8 @@ console.log(guestList.length);
 
 []: 배열, 항목 검색, 데이터 항목을 보유한 배열.
 
-length 배열은 0부터 계산.
-
+length 배열의 길이, 갯수
+(배열은 0부터 계산되기 때문에 legnth를 사용해야 1부터 갯수를 정확히 쓸 수 있다.)
 
 include 함수. 존재할 경우 true, 존재하지 않을 경우 false
 

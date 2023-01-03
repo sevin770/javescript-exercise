@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>알람창만들기</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="alert-box" id="alert">
+        <p id="title"> 알림창임 </p>
+        <button id="close">닫기</button>
+      </div>
+      
+      <button onclick="알림창('아이디')">버튼1</button>
+      <button onclick="알림창('비밀번호')">버튼2</button>
+      
+      <script>
+
+        document.getElementById('close').addEventListener('click', function(){
+            document.getElementById('alert').style.display = 'none';
+        })
+
+        // function 아이디알림창(){ 
+        //   document.getElementById('title').innerHTML = '아이디입력하셈'; 
+        //   document.getElementById('alert').style.display = 'block'; 
+        // }
+      
+        // function 비번알림창(){ 
+        //   document.getElementById('title').innerHTML = '비번입력하셈'; 
+        //   document.getElementById('alert').style.display = 'block'; 
+        // }
+        
+        function 알림창(text){
+            document.getElementById('title').innerHTML = text;
+            document.getElementById('alert').style.display = 'block'; 
+        }
+
+        function 알림창닫기(구멍){
+            document.getElementById('alert').style.display = 구멍;
+        }
+      </script>
+</body>
+</html>

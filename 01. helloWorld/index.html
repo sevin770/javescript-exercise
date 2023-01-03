@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="hello">안녕하세요</h1>
+    <h1 id="hi">js 초보예요</h1>
+
+    <script>        // 셀렉터┐
+        document.getElementById('hello').innerHTML = "안녕";
+        //1.바꿀요소id                     2.무엇을     3.어떻게
+        document.getElementById('hi').innerHTML = 'JS고수예요'; 
+        document.getElementById('hi').style.color = 'green'; 
+        document.getElementById('hi').style.fontSize = '16px'; 
+
+        //= : 오른쪽을 왼쪽에 넣으라는 뜻.
+        //innerHTML 같은 코드는 구글링해서 알아내야 함.
+
+        // .getElementById()는 셀렉터라고 부릅니다. html 요소를 찾기 위해 사용합니다.
+        // .innerHTML / .style / .color 이렇게 점찍는데 괄호없는건 메소드(또는 함수) 라고 부릅니다.
+        // html 요소의 어떤 속성을 변경할지 결정하기 위해 사용합니다. 
+
+    </script>
+</body>
+</html>

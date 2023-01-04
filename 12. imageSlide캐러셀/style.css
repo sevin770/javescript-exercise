@@ -1,0 +1,25 @@
+body {
+}
+
+.list-group {
+  display: none;
+}
+
+.slide-wrap {
+  overflow: hidden;
+}
+
+.slide-container {
+  width: 300vw; 
+  /* 브라우저 폭 == 100vw */
+  /* margin-left보다 부드러움 */
+  transition: all 1s;
+}
+
+.slide-box {
+  width: 100vw;
+  float: left;
+}
+.slide-box img {
+  width: 100%;
+}

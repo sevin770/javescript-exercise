@@ -1,0 +1,33 @@
+body {
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+
+
+.list-group {
+  display: none;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 5;
+}
+
+.navbar-brand {
+  font-size: 50px;
+}
+
+/* 스크롤 부드럽게 움직이는거 해제 */
+:root {
+  scroll-behavior: auto;
+}
+
+
+.textbox { 
+  display: block;
+  position: absolute;
+  top: 200px;
+}

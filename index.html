@@ -8,17 +8,15 @@
   </head>
   <body>
     <script>
-      var a = [1, 2, 3];
-      var b = [4, 5];
 
-      var c = [...a]; 
-      console.log(c); 
+function 기계(){ // 부모
+    this.name = 'Kim';
+    this.age = 15;
+}
+기계.prototype.gender = '남'
+var 학생1 = new 기계(); 
+console.log(학생1.__proto__);
 
-      var d = [...a, ...b];
-      console.log(d); 
-
-      var f = [a, b]
-      console.log(f);
     </script>
   </body>
 </html>

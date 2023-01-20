@@ -1,0 +1,109 @@
+<div>
+    <img id="test" src="https://codingapple1.github.io/kona.jpg"> 
+</div>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> 
+<script>
+// Q1. <img> 이미지 로딩 성공시 특정 코드를 실행하고 싶습니다. 
+// 이미지가 로드가 되면 콘솔창에 성공, 로드가 실패하면 콘솔창에 실패를 출력 promise로 해보기.
+//<img id="test" src="https://codingapple1.github.io/kona.jpg"> 
+// (참고) 이미지 로딩이 끝났다는 것은 <img>에 load라는 이벤트리스너를 붙여서 체크가 가능합니다. 
+// (참고) 이미지 로딩이 실패했다는 것은 <img>에 error라는 이벤트리스너를 붙여서 체크가 가능합니다.
+
+var imgLoading = new Promise(function(resolve,reject){
+    document.querySelector('#test').addEventListener('load', function(){
+        resolve();
+    });
+    document.querySelector('#test').addEventListener('error', function(){
+        reject();
+    })
+});
+imgLoading.then(function(){
+    console.log('성공');
+}).catch(function(){
+    console.log('실패');
+});
+
+//Q2. Ajax 요청이 성공하면 무언가 코드를 실행하고 싶습니다. 
+//Promise의 then 함수를 이용해서 Ajax로 받아온 인삿말을 콘솔창에 출력해주고 싶습니다.
+
+// $.ajax({
+//   type : 'GET',
+//   url : 'https://codingapple1.github.io/hello.txt '
+// }).done(function(결과){
+//   console.log(결과);
+// });
+
+var ajaxHi = new Promise(function(resolve){
+    $.get('https://codingapple1.github.io/hello.txt ').done(function(결과){
+    resolve(결과);
+    });
+});
+
+ajaxHi.then(function(a){
+    console.log(a);
+});
+
+//Q3. Promise chaining 
+// 위 문제 직후 https://codingapple1.github.io/hello2.txt 라는 경로로 GET 요청을 또 하고
+// .then을 이용해 인삿말을 또 출력해보고 싶습니다. 
+
+// var ajaxHi = new Promise(function(resolve){
+//     $.get('https://codingapple1.github.io/hello.txt ').done(function(결과){
+//     resolve(결과);
+//     });
+// });
+
+// ajaxHi.then(function(a){
+//     console.log(a);
+//     var ajaxHi2 = new Promise(function(resolve){
+//         $.get('https://codingapple1.github.io/hello2.txt').done(function(결과){
+//         resolve(결과);
+//         });
+//     });
+//     return ajaxHi2; 
+// }).then(function(a){
+//     console.log(a);
+// })
+
+//답
+
+// var 프로미스 = new Promise(function(resolve){
+//     $.get('https://codingapple1.github.io/hello.txt ').done(function(결과){
+//     resolve(결과);
+//     });
+// });
+
+// 프로미스.then(function(a){
+//     console.log(a);
+//     return new Promise(function(resolve){
+//         $.get('https://codingapple1.github.io/hello2.txt').done(function(결과){
+//         resolve(결과);
+//         });
+//     });
+// }).then(function(a){
+//     console.log(a);
+// });
+
+//함수로 축약하기 
+
+var 프로미스 = ajax해주는함수('https://codingapple1.github.io/hello.txt');
+
+프로미스.then(function(결과){
+    console.log(결과);
+    return ajax해주는함수('https://codingapple1.github.io/hello2.txt');
+    }).then(function(결과){
+    console.log(결과);
+});
+
+function ajax해주는함수(URL){
+    return new Promise((성공,실패)=>{
+        $.get(URL)
+        .done(function(결과){
+            성공(결과)
+        });
+    })
+}
+
+
+
+</script>

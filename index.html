@@ -9,11 +9,14 @@
   <body>
     <script>
 
-var [a,b,c = 10] = [2,3]; 
+      var height = Symbol('내 시크릿 키임');
+      var me = {name : 'park'};
+      me[height] = 168;
 
-var [a,b,c = 10] = [];
-console.log(c);
-
+      for (var key in me){
+        console.log(me[key]);
+      }
+      console.log(me);
     </script>
   </body>
 </html>

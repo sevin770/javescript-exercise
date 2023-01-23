@@ -40,7 +40,7 @@ setAge(나이){
 ◆ 더 쉽게 쓸 수 있게 변경하는 법. setter, getter
 set,get 키워드를 함수 왼쪽에 써주면 기존에 쓰던 것처럼 쓸 수 있다. 프로퍼티화 시켜줌.
 
-◆ get함수들(get)
+◆ get함수들(getter)
 -데이터를 꺼내쓰는 함수에 사용
 -return이 있어야 한다.
 
@@ -59,7 +59,7 @@ var 사람 = {
     }
 }
 사람.setAge = 20; // 사람.setAge(20);와 같다.
-사람.nextAge; // 사람.nextAge(); 와 같다. 소괄호 빼도 됨. get을 썼기 떄문에 쓰면 에러가 남
+사람.nextAge; // 사람.nextAge(); 와 같다. 소괄호 빼야 함. get을 썼기 때문에 쓰면 에러가 남
 
 ◆ class에서 사용하는 get/set
 

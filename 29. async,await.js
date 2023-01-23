@@ -55,7 +55,7 @@ async function 더하기(){
     console.log(결과); // 100출력
 
 
-    // 프로미스.then(function(){ // then 대시 awit사용이 가능하다.
+    // 프로미스.then(function(){ // then 대신 awit사용이 가능하다.
     //     console.log('성공했어요');
     // });
 }

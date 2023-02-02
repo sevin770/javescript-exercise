@@ -45,9 +45,9 @@ for(var key in obj){
 
 // function(){} 
 // () => {}
-//arrow function과 차이점 함수 안의 this뜻이 달라질 수 있다. 
+// arrow function과 차이점 함수 안의 this뜻이 달라질 수 있다. 
 
-//arrow function 안에서 쓰면 바깥에 있던 this를 그대로 가져다 쓴다.
-//그냥 function을 쓰면 this값이 알맞게 재정의 됨.
-//이벤트리스너를 쓸 때 this 를 e.currentTarget의미로 쓰려면 일반function을 쓴다.
-//arrow를 쓰면 바깥에 있던 this를 가져와 쓰기 때문에 같은 의미로 쓸 수 없다. 
+// arrow function 안에서 쓰면 바깥에 있던 this를 그대로 가져다 쓴다.
+// 그냥 function을 쓰면 this값이 알맞게 재정의 됨.
+// 이벤트리스너를 쓸 때 this 를 e.currentTarget의미로 쓰려면 일반function을 쓴다.
+// arrow를 쓰면 바깥에 있던 this를 가져와 쓰기 때문에 같은 의미로 쓸 수 없다. 

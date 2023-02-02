@@ -1,0 +1,54 @@
+<div></div>
+<script>
+  //0. 오브젝트 자료 여러개를 만들고 싶습니다. 아래와 똑같이 constructor를 이용해서 뽑아보기
+  // var 학생1 = { name : 'Kim', age : 20 }
+  // var 학생2 = { name : 'Park', age : 21 }
+  // var 학생3 = { name : 'Lee', age : 22 }
+
+  function Student(이름, 나이) {
+    this.name = 이름;
+    this.age = 나이;
+    this.sayHi = function () {
+      console.log("안녕 나는 " + 이름 + "이야");
+    };
+  }
+
+  var 학생1 = new Student("Kim", 20);
+  var 학생2 = new Student("Park", 21);
+  var 학생3 = new Student("Lee", 22);
+  console.log(학생1.sayHi());
+  console.log(학생2.sayHi());
+  console.log(학생3.sayHi());
+
+  //1. 다음 코드의 출력 결과는 무엇일까요?
+
+  function Parent() {
+    this.name = "Kim";
+  }
+  var a = new Parent();
+
+  a.__proto__.name = "Park";
+  console.log(a.name);
+
+  //a.__proto__.name = 'Park'; 이건 부모 prototype에 { name : 'Park' } 이걸 추가하라는 뜻
+  //그럼 이제 a.name 이라고 사용했을 때
+  //내가 직접 가지고 있는 { name : 'Kim' } 이걸 우선 출력해준다.
+
+ //2. 모든 array에 적용할 수 있는 함수를 직접 새로 만들려면 어떻게 해야할까요?
+ // array 내에 있는 3이라는 값을 제거해주는 함수만들기
+ //  var arr = [1,2,3];
+ //  arr.remove3();
+ //  console.log(arr);
+
+ //답 : array의 prototype에 내장함수로 만들면 된다. 
+ Array.prototype.remove3 = function(){
+    for (var i = 0; i < this.length; i++) {
+    if ( this[i] === 3 ) {
+      this.splice(i,1);
+    }
+  }
+}
+var arr = [1,2,3,4];
+arr.remove3();
+
+console.log(arr); //1,2,4출력
